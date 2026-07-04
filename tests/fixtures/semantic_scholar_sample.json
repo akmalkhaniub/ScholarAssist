@@ -1,0 +1,165 @@
+[
+  {
+    "paperId": "a2e6d0f0e1c5c34bba75a84c0fe1e0f7b0c7b4e3",
+    "externalIds": {
+      "DOI": "10.1038/s41586-019-1654-9",
+      "ArXiv": "1911.00577",
+      "MAG": "2741809807",
+      "CorpusId": 204737123
+    },
+    "title": "Quantum supremacy using a programmable superconducting processor",
+    "authors": [
+      {"authorId": "145247613", "name": "Frank Arute"},
+      {"authorId": "38603638", "name": "Kunal Arya"},
+      {"authorId": "1715540", "name": "Ryan Babbush"}
+    ],
+    "year": 2019,
+    "venue": "Nature",
+    "citationCount": 5843,
+    "referenceCount": 67,
+    "isOpenAccess": true,
+    "abstract": "The promise of quantum computers is that certain computational tasks might be executed exponentially faster on a quantum processor than on a classical processor. A fundamental challenge is to build a high-fidelity processor capable of running quantum algorithms in an exponentially large computational space.",
+    "fieldsOfStudy": ["Physics", "Computer Science"],
+    "publicationDate": "2019-10-23",
+    "publicationTypes": ["JournalArticle"],
+    "journal": {
+      "name": "Nature",
+      "volume": "574",
+      "pages": "505-510"
+    },
+    "s2FieldsOfStudy": [
+      {"category": "Physics", "source": "external"},
+      {"category": "Computer Science", "source": "s2-fos-model"}
+    ]
+  },
+  {
+    "paperId": "d7cc5e0fb3c5a3f7c2e2d1c3e0a9b6c5d4e3f2a1",
+    "externalIds": {
+      "DOI": "10.1038/s41586-021-03819-2",
+      "ArXiv": "2107.03374",
+      "MAG": "2963583915",
+      "PubMedCentral": "8371605",
+      "CorpusId": 235959867
+    },
+    "title": "Highly accurate protein structure prediction with AlphaFold",
+    "authors": [
+      {"authorId": "47139517", "name": "John Jumper"},
+      {"authorId": "2068988", "name": "Richard Evans"},
+      {"authorId": "38908262", "name": "Alexander Pritzel"}
+    ],
+    "year": 2021,
+    "venue": "Nature",
+    "citationCount": 21754,
+    "referenceCount": 95,
+    "isOpenAccess": true,
+    "abstract": "Proteins are essential to life, and understanding their structure can facilitate a mechanistic understanding of their function. Through an enormous experimental effort, the structures of around 100,000 unique proteins have been determined, but this represents a small fraction of the billions of known protein sequences.",
+    "fieldsOfStudy": ["Biology", "Computer Science"],
+    "publicationDate": "2021-07-15",
+    "publicationTypes": ["JournalArticle"],
+    "journal": {
+      "name": "Nature",
+      "volume": "596",
+      "pages": "583-589"
+    },
+    "s2FieldsOfStudy": [
+      {"category": "Biology", "source": "external"},
+      {"category": "Computer Science", "source": "s2-fos-model"}
+    ]
+  },
+  {
+    "paperId": "b5c2d1e0f3a4b6c7d8e9f0a1b2c3d4e5f6a7b8c9",
+    "externalIds": {
+      "DOI": "10.1145/3442188.3445922",
+      "ACL": "2021.facct-1.24",
+      "CorpusId": 232040593
+    },
+    "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+    "authors": [
+      {"authorId": "2705113", "name": "Emily M. Bender"},
+      {"authorId": "4038671", "name": "Timnit Gebru"},
+      {"authorId": "145905177", "name": "Angelina McMillan-Major"}
+    ],
+    "year": 2021,
+    "venue": "FAccT",
+    "citationCount": 3472,
+    "referenceCount": 168,
+    "isOpenAccess": true,
+    "abstract": "The past three years have seen a trend of ever-increasing size of language models, from BERT to GPT-2 and GPT-3. This paper examines the costs and risks associated with the trend of ever-growing language models, including financial, environmental, and social costs.",
+    "fieldsOfStudy": ["Computer Science"],
+    "publicationDate": "2021-03-01",
+    "publicationTypes": ["Conference"],
+    "journal": {
+      "name": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency",
+      "volume": null,
+      "pages": "610-623"
+    },
+    "s2FieldsOfStudy": [
+      {"category": "Computer Science", "source": "external"},
+      {"category": "Linguistics", "source": "s2-fos-model"}
+    ]
+  },
+  {
+    "paperId": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+    "externalIds": {
+      "DOI": "10.1038/nature24270",
+      "MAG": "2899499894",
+      "CorpusId": 205261034
+    },
+    "title": "Mastering the game of Go without human knowledge",
+    "authors": [
+      {"authorId": "1688681", "name": "David Silver"},
+      {"authorId": "144295754", "name": "Julian Schrittwieser"},
+      {"authorId": "38589064", "name": "Karen Simonyan"}
+    ],
+    "year": 2017,
+    "venue": "Nature",
+    "citationCount": 8102,
+    "referenceCount": 53,
+    "isOpenAccess": false,
+    "abstract": "A long-standing goal of artificial intelligence is an algorithm that learns, tabula rasa, superhuman proficiency in challenging domains. Here we demonstrate that by training solely with reinforcement learning, without human data or guidance beyond game rules, our program AlphaGo Zero achieved superhuman performance.",
+    "fieldsOfStudy": ["Computer Science", "Mathematics"],
+    "publicationDate": "2017-10-19",
+    "publicationTypes": ["JournalArticle"],
+    "journal": {
+      "name": "Nature",
+      "volume": "550",
+      "pages": "354-359"
+    },
+    "s2FieldsOfStudy": [
+      {"category": "Computer Science", "source": "external"},
+      {"category": "Mathematics", "source": "s2-fos-model"}
+    ]
+  },
+  {
+    "paperId": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3",
+    "externalIds": {
+      "DOI": "10.48550/arXiv.2005.14165",
+      "ArXiv": "2005.14165",
+      "CorpusId": 218971783
+    },
+    "title": "Language Models are Few-Shot Learners",
+    "authors": [
+      {"authorId": "52242925", "name": "Tom B. Brown"},
+      {"authorId": "116154098", "name": "Benjamin Mann"},
+      {"authorId": "2115807581", "name": "Nick Ryder"}
+    ],
+    "year": 2020,
+    "venue": "NeurIPS",
+    "citationCount": 19845,
+    "referenceCount": 134,
+    "isOpenAccess": true,
+    "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. We show that scaling up language models greatly improves task-agnostic, few-shot performance.",
+    "fieldsOfStudy": ["Computer Science"],
+    "publicationDate": "2020-05-28",
+    "publicationTypes": ["Conference"],
+    "journal": {
+      "name": "Advances in Neural Information Processing Systems",
+      "volume": "33",
+      "pages": "1877-1901"
+    },
+    "s2FieldsOfStudy": [
+      {"category": "Computer Science", "source": "external"},
+      {"category": "Linguistics", "source": "s2-fos-model"}
+    ]
+  }
+]

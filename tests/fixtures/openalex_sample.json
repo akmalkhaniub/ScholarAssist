@@ -1,0 +1,285 @@
+[
+  {
+    "id": "https://openalex.org/W2741809807",
+    "doi": "https://doi.org/10.1038/s41586-019-1654-9",
+    "title": "Quantum supremacy using a programmable superconducting processor",
+    "display_name": "Quantum supremacy using a programmable superconducting processor",
+    "publication_year": 2019,
+    "publication_date": "2019-10-23",
+    "type": "journal-article",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5008793667",
+          "display_name": "Frank Arute",
+          "orcid": null
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210098204",
+            "display_name": "Google AI",
+            "ror": null,
+            "country_code": "US",
+            "type": "company"
+          }
+        ],
+        "raw_affiliation_strings": ["Google AI Quantum, Mountain View, CA, USA"]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5063282715",
+          "display_name": "Kunal Arya",
+          "orcid": null
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210098204",
+            "display_name": "Google AI",
+            "ror": null,
+            "country_code": "US",
+            "type": "company"
+          }
+        ],
+        "raw_affiliation_strings": ["Google AI Quantum, Mountain View, CA, USA"]
+      }
+    ],
+    "host_venue": {
+      "id": "https://openalex.org/V137773608",
+      "display_name": "Nature",
+      "issn_l": "0028-0836",
+      "issn": ["0028-0836", "1476-4687"],
+      "type": "journal"
+    },
+    "cited_by_count": 5843,
+    "is_oa": true,
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/1911.00577"
+    },
+    "referenced_works": [
+      "https://openalex.org/W1969874742",
+      "https://openalex.org/W2112384041",
+      "https://openalex.org/W2159228855"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2963583915",
+    "doi": "https://doi.org/10.1038/s41586-020-2649-2",
+    "title": "Highly accurate protein structure prediction with AlphaFold",
+    "display_name": "Highly accurate protein structure prediction with AlphaFold",
+    "publication_year": 2021,
+    "publication_date": "2021-07-15",
+    "type": "journal-article",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5032091740",
+          "display_name": "John Jumper",
+          "orcid": "https://orcid.org/0000-0001-6169-6580"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210116234",
+            "display_name": "DeepMind",
+            "ror": "https://ror.org/04wn7wc95",
+            "country_code": "GB",
+            "type": "company"
+          }
+        ],
+        "raw_affiliation_strings": ["DeepMind, London, UK"]
+      }
+    ],
+    "host_venue": {
+      "id": "https://openalex.org/V137773608",
+      "display_name": "Nature",
+      "issn_l": "0028-0836",
+      "issn": ["0028-0836", "1476-4687"],
+      "type": "journal"
+    },
+    "cited_by_count": 21754,
+    "is_oa": true,
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://www.nature.com/articles/s41586-021-03819-2.pdf"
+    },
+    "referenced_works": [
+      "https://openalex.org/W2014711754",
+      "https://openalex.org/W2027282815"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W3177828909",
+    "doi": "https://doi.org/10.1145/3442188.3445922",
+    "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+    "display_name": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+    "publication_year": 2021,
+    "publication_date": "2021-03-01",
+    "type": "proceedings-article",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5014103231",
+          "display_name": "Emily M. Bender",
+          "orcid": "https://orcid.org/0000-0003-0999-6028"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I201448701",
+            "display_name": "University of Washington",
+            "ror": "https://ror.org/00cvxb145",
+            "country_code": "US",
+            "type": "education"
+          }
+        ],
+        "raw_affiliation_strings": ["University of Washington, Seattle, WA, USA"]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5054327758",
+          "display_name": "Timnit Gebru",
+          "orcid": null
+        },
+        "institutions": [],
+        "raw_affiliation_strings": ["Black in AI"]
+      }
+    ],
+    "host_venue": {
+      "id": "https://openalex.org/V4210178976",
+      "display_name": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency",
+      "issn_l": null,
+      "issn": null,
+      "type": "proceedings"
+    },
+    "cited_by_count": 3472,
+    "is_oa": true,
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://faculty.washington.edu/ebender/papers/Stochastic_Parrots.pdf"
+    },
+    "referenced_works": [
+      "https://openalex.org/W2157060193",
+      "https://openalex.org/W2963403868"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W2899499894",
+    "doi": "https://doi.org/10.1126/science.aax2342",
+    "title": "Mastering the game of Go without human knowledge",
+    "display_name": "Mastering the game of Go without human knowledge",
+    "publication_year": 2017,
+    "publication_date": "2017-10-19",
+    "type": "journal-article",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5076709672",
+          "display_name": "David Silver",
+          "orcid": "https://orcid.org/0000-0003-2425-9785"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210116234",
+            "display_name": "DeepMind",
+            "ror": "https://ror.org/04wn7wc95",
+            "country_code": "GB",
+            "type": "company"
+          }
+        ],
+        "raw_affiliation_strings": ["DeepMind, London, UK"]
+      }
+    ],
+    "host_venue": {
+      "id": "https://openalex.org/V3880285",
+      "display_name": "Nature",
+      "issn_l": "0028-0836",
+      "issn": ["0028-0836", "1476-4687"],
+      "type": "journal"
+    },
+    "cited_by_count": 8102,
+    "is_oa": false,
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null
+    },
+    "referenced_works": [
+      "https://openalex.org/W2092948404",
+      "https://openalex.org/W2164363908",
+      "https://openalex.org/W2952768770"
+    ]
+  },
+  {
+    "id": "https://openalex.org/W3038066764",
+    "doi": "https://doi.org/10.48550/arXiv.2005.14165",
+    "title": "Language Models are Few-Shot Learners",
+    "display_name": "Language Models are Few-Shot Learners",
+    "publication_year": 2020,
+    "publication_date": "2020-05-28",
+    "type": "preprint",
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5068539834",
+          "display_name": "Tom B. Brown",
+          "orcid": null
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210145410",
+            "display_name": "OpenAI",
+            "ror": "https://ror.org/03wchmz18",
+            "country_code": "US",
+            "type": "nonprofit"
+          }
+        ],
+        "raw_affiliation_strings": ["OpenAI, San Francisco, CA, USA"]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5046202190",
+          "display_name": "Benjamin Mann",
+          "orcid": null
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I4210145410",
+            "display_name": "OpenAI",
+            "ror": "https://ror.org/03wchmz18",
+            "country_code": "US",
+            "type": "nonprofit"
+          }
+        ],
+        "raw_affiliation_strings": ["OpenAI, San Francisco, CA, USA"]
+      }
+    ],
+    "host_venue": {
+      "id": "https://openalex.org/V4306402512",
+      "display_name": "arXiv",
+      "issn_l": null,
+      "issn": null,
+      "type": "repository"
+    },
+    "cited_by_count": 19845,
+    "is_oa": true,
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/2005.14165"
+    },
+    "referenced_works": [
+      "https://openalex.org/W2963403868",
+      "https://openalex.org/W2964095017"
+    ]
+  }
+]

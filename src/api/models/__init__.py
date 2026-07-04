@@ -1,0 +1,1 @@
+# ScholarAssist — API Pydantic Models
