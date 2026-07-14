@@ -37,7 +37,6 @@ export function ClaimList({ claims }: ClaimListProps) {
 
   return (
     <div className="space-y-6 w-full max-w-4xl mx-auto">
-      <h2 className="text-2xl font-semibold tracking-tight">Verified Claims ({claims.length})</h2>
       
       {claims.map((claim) => (
         <Card key={claim.claim_id} className="border-l-4 overflow-hidden" 

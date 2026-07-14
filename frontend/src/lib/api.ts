@@ -45,3 +45,19 @@ export async function verifyDocument(documentId: string): Promise<VerificationRe
 
   return response.json();
 }
+
+export async function exportDocument(documentId: string, claims: ClaimVerification[], citationStyle: string = "APA"): Promise<string> {
+  const response = await fetch(`${API_BASE_URL}/v1/documents/${documentId}/export`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ claims, citation_style: citationStyle }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to export document");
+  }
+
+  return response.text();
+}

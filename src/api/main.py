@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import structlog
 
 from src.api.middleware import RateLimitMiddleware, LogRequestsMiddleware
-from src.api.routers import records, citations, provenance, authors, venues, health, quality, documents, claims, bibliography
+from src.api.routers import records, citations, provenance, authors, venues, health, quality, documents, claims, bibliography, export
 from src.config.settings import get_settings
 
 logger = structlog.get_logger(__name__)
@@ -63,3 +63,4 @@ app.include_router(health.router, prefix="/v1", tags=["Health & Status"])
 app.include_router(documents.router, prefix="/v1/documents", tags=["Documents"])
 app.include_router(claims.router, prefix="/v1/documents", tags=["Claims"])
 app.include_router(bibliography.router, prefix="/v1/bibliography", tags=["Bibliography"])
+app.include_router(export.router, prefix="/v1/documents", tags=["Export"])

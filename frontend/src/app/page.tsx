@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { DocumentUploader } from "@/components/features/DocumentUploader";
 import { ClaimList } from "@/components/features/ClaimList";
-import { ClaimVerification, verifyDocument } from "@/lib/api";
-import { Loader2 } from "lucide-react";
+import { ClaimVerification, verifyDocument, exportDocument } from "@/lib/api";
+import { Loader2, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [documentId, setDocumentId] = useState<string | null>(null);
   const [claims, setClaims] = useState<ClaimVerification[]>([]);
   const [isVerifying, setIsVerifying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isExporting, setIsExporting] = useState(false);
 
   const handleUploadSuccess = async (id: string) => {
     setDocumentId(id);
@@ -26,6 +28,31 @@ export default function Home() {
       setError("Failed to verify document claims. Please ensure backend is responding.");
     } finally {
       setIsVerifying(false);
+    }
+  };
+
+  const handleExport = async () => {
+    if (!documentId || claims.length === 0) return;
+    
+    setIsExporting(true);
+    try {
+      const text = await exportDocument(documentId, claims, "APA");
+      
+      // Trigger download
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `scholarassist_annotated_${documentId}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to export annotated document.");
+    } finally {
+      setIsExporting(false);
     }
   };
 
@@ -61,6 +88,14 @@ export default function Home() {
 
       {documentId && claims.length > 0 && !isVerifying && (
         <div className="slide-up-fade-in mt-8">
+          <div className="flex justify-between items-center mb-6 max-w-4xl mx-auto w-full">
+            <h2 className="text-2xl font-semibold tracking-tight">Verified Claims ({claims.length})</h2>
+            <Button onClick={handleExport} disabled={isExporting}>
+              {isExporting ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Download className="w-4 h-4 mr-2" />}
+              Export Annotated Doc
+            </Button>
+          </div>
+          
           <ClaimList claims={claims} />
           
           <div className="mt-12 text-center">
