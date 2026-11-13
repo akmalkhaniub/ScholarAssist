@@ -18,6 +18,7 @@ from src.connectors.core_ac import COREConnector
 from src.connectors.unpaywall import UnpaywallConnector
 from src.connectors.dblp import DBLPConnector
 from src.connectors.opencitations import OpenCitationsConnector
+from src.connectors.arxiv import ArxivConnector
 
 __all__ = [
     # Base
@@ -33,4 +34,5 @@ __all__ = [
     "UnpaywallConnector",
     "DBLPConnector",
     "OpenCitationsConnector",
+    "ArxivConnector",
 ]

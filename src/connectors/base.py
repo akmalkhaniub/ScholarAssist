@@ -38,6 +38,7 @@ class SourceName(str, Enum):
     UNPAYWALL = "unpaywall"
     DBLP = "dblp"
     OPENCITATIONS = "opencitations"
+    ARXIV = "arxiv"
 
 
 class IngestionMode(str, Enum):
