@@ -1,7 +1,7 @@
 [
   {
     "id": "SCH-001",
-    "status": "TODO",
+    "status": "DONE",
     "priority": 1,
     "title": "Add Unit Tests for Normalization and Deduplication DAGs",
     "description": "Add pytest unit tests under `tests/test_dags.py` verifying Spark DataFrame normalization logic (author name cleansing, DOI normalization) without requiring a live Spark cluster.",

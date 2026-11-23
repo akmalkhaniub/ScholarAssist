@@ -1,6 +1,64 @@
-from pyspark.sql import DataFrame
-import pyspark.sql.functions as F
-from pyspark.sql.types import MapType, StringType
+from __future__ import annotations
+
+from typing import Any
+
+try:
+    from pyspark.sql import DataFrame
+    import pyspark.sql.functions as F
+    from pyspark.sql.types import MapType, StringType
+except ImportError:  # Allow lightweight unit-test imports without PySpark installed
+    DataFrame = Any  # type: ignore[misc, assignment]
+    F = None  # type: ignore[assignment]
+    MapType = Any  # type: ignore[misc, assignment]
+    StringType = Any  # type: ignore[misc, assignment]
+
+
+def resolve_golden_records(
+    records: list[dict[str, Any]],
+    cluster_mapping: dict[str, str],
+    provider_priority: list[str],
+) -> list[dict[str, Any]]:
+    """
+    Pure-Python deterministic equivalent of ``merge_golden_records`` for unit testing
+    and local verification without a Spark cluster.
+    """
+    priority_rank = {provider: idx for idx, provider in enumerate(provider_priority)}
+    default_rank = len(provider_priority)
+    fields_to_resolve = ["title", "doi", "publication_year", "first_author_lastname"]
+
+    clusters: dict[str, list[dict[str, Any]]] = {}
+    for rec in records:
+        rec_id = str(rec["id"])
+        gid = str(cluster_mapping.get(rec_id, rec_id))
+        clusters.setdefault(gid, []).append(rec)
+
+    golden: list[dict[str, Any]] = []
+    for gid, members in clusters.items():
+        ordered = sorted(
+            members,
+            key=lambda r: (
+                priority_rank.get(str(r.get("provider", "")), default_rank),
+                str(r.get("provider", "")),
+            ),
+        )
+        merged: dict[str, Any] = {
+            "golden_record_id": gid,
+            "merged_ids": [m["id"] for m in members],
+            "merged_providers": sorted({str(m["provider"]) for m in members if m.get("provider")}),
+        }
+        provenance: dict[str, str] = {}
+        for field in fields_to_resolve:
+            for m in ordered:
+                if m.get(field) is not None:
+                    merged[field] = m[field]
+                    provenance[field] = str(m.get("provider", ""))
+                    break
+            else:
+                merged[field] = None
+        merged["source_provenance"] = provenance
+        golden.append(merged)
+
+    return golden
 
 def merge_golden_records(df: DataFrame, cluster_mapping: DataFrame, provider_priority: list[str]) -> DataFrame:
     """

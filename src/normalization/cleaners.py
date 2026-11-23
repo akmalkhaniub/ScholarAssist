@@ -8,10 +8,78 @@ raw data fields (DOIs, titles, author names) before entity resolution.
 from __future__ import annotations
 
 import re
-from typing import Callable
+from typing import Any, Callable
 
-import pyspark.sql.functions as F
-from pyspark.sql.column import Column
+try:
+    import pyspark.sql.functions as F
+    from pyspark.sql.column import Column
+except ImportError:  # Allow lightweight unit-test imports without PySpark installed
+    F = None  # type: ignore[assignment]
+    Column = Any  # type: ignore[misc, assignment]
+
+
+# ---------------------------------------------------------------------------
+# Pure-Python Reference Cleaners (Spark-parity & unit-testable)
+# ---------------------------------------------------------------------------
+
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
+_DOI_PREFIX_RE = re.compile(r"^(https?://)?(dx\.)?doi\.org/")
+_AUTHOR_HONORIFIC_RE = re.compile(r"^(dr|prof|mr|mrs|ms)\.?\s+", re.IGNORECASE)
+
+
+def clean_doi(raw_doi: str | None) -> str | None:
+    """Normalize a DOI string to lowercase canonical form, or return None if invalid."""
+    if not raw_doi or not isinstance(raw_doi, str):
+        return None
+    cleaned = raw_doi.strip().lower()
+    cleaned = _DOI_PREFIX_RE.sub("", cleaned)
+    cleaned = re.sub(r"^doi:\s*", "", cleaned)
+    cleaned = cleaned.strip()
+    return cleaned if cleaned.startswith("10.") and "/" in cleaned else None
+
+
+def strip_html(text: str | None) -> str | None:
+    """Strip HTML tags from text while preserving None."""
+    if text is None:
+        return None
+    return _HTML_TAG_RE.sub("", text)
+
+
+def clean_title(raw_title: str | None) -> str:
+    """Normalize a paper title for fuzzy matching / LSH blocking."""
+    if not raw_title:
+        return ""
+    cleaned = strip_html(raw_title.lower()) or ""
+    cleaned = re.sub(r"[^a-z0-9\s]", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned.strip()
+
+
+def normalize_author_name(raw_name: str | None) -> str:
+    """Cleanse an author name by normalizing 'Last, First' order, titles, and whitespace."""
+    if not raw_name or not isinstance(raw_name, str):
+        return ""
+    name = _HTML_TAG_RE.sub("", raw_name).strip()
+    name = _AUTHOR_HONORIFIC_RE.sub("", name).strip()
+    if "," in name:
+        parts = [p.strip() for p in name.split(",", 1)]
+        if parts[0] and parts[1]:
+            name = f"{parts[1]} {parts[0]}"
+    return re.sub(r"\s+", " ", name).strip()
+
+
+def extract_first_author_lastname(authors: list[dict[str, Any]] | None) -> str | None:
+    """Extract normalized lowercase alphabetic last name of the first author."""
+    if not authors:
+        return None
+    first = authors[0]
+    raw_name = first.get("name") if isinstance(first, dict) else str(first)
+    normalized = normalize_author_name(raw_name)
+    if not normalized:
+        return None
+    last_part = normalized.split(" ")[-1].lower()
+    alpha_only = re.sub(r"[^a-z]", "", last_part)
+    return alpha_only or None
 
 
 # ---------------------------------------------------------------------------
