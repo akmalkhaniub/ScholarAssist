@@ -33,14 +33,17 @@ async def search_records(
     settings = get_settings()
     index_alias = settings.opensearch.index_alias
 
+    if year_start is not None and year_end is not None and year_start > year_end:
+        raise HTTPException(status_code=422, detail="year_start must be <= year_end")
+
     # Build OpenSearch Query DSL
-    must_clauses = [{"query_string": {"query": q, "default_field": "title"}}]
-    
-    if year_start or year_end:
-        range_clause = {}
-        if year_start:
+    must_clauses: list[dict] = [{"query_string": {"query": q, "default_field": "title"}}]
+
+    if year_start is not None or year_end is not None:
+        range_clause: dict[str, int] = {}
+        if year_start is not None:
             range_clause["gte"] = year_start
-        if year_end:
+        if year_end is not None:
             range_clause["lte"] = year_end
         must_clauses.append({"range": {"publication_year": range_clause}})
 

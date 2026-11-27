@@ -3,7 +3,7 @@ ScholarAssist — API Models (Records)
 """
 
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class AuthorModel(BaseModel):
@@ -39,8 +39,7 @@ class ScholarRecord(BaseModel):
     source_provenance: dict[str, str] = Field(default_factory=dict)
     merged_provider_ids: list[str] = Field(default_factory=list)
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SearchResponse(BaseModel):
